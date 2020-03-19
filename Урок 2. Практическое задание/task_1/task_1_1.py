@@ -32,3 +32,29 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+while True:
+    try:
+        print('Введите операцию (+, -, *, / или 0 для выхода):', end=' ')
+        CMD_TYPE = input()
+        if CMD_TYPE != '+' and CMD_TYPE != '-' and CMD_TYPE != '*' and CMD_TYPE != '/' and CMD_TYPE != '0':
+            print('Неверная операция. Повторите ввод')
+        else:
+            if CMD_TYPE == '0':
+                break
+            print('Введите первое число:', end=' ')
+            FIRST_NUM = int(input())
+            print('Введите второе число:', end=' ')
+            SECOND_NUM = int(input())
+            print(f'Результат {FIRST_NUM} {CMD_TYPE} {SECOND_NUM} =', end=' ')
+            if CMD_TYPE == '+':
+                print(FIRST_NUM + SECOND_NUM)
+            elif CMD_TYPE == '-':
+                print(FIRST_NUM - SECOND_NUM)
+            elif CMD_TYPE == '*':
+                print(FIRST_NUM * SECOND_NUM)
+            elif CMD_TYPE == '/':
+                print(FIRST_NUM / SECOND_NUM)
+    except ValueError:
+        print('Ошибка ввода числа')
+    except ZeroDivisionError:
+        print('Ошибка деления на 0')

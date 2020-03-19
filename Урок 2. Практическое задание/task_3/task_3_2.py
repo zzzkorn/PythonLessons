@@ -14,3 +14,20 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def task3(num):
+    if num <= 0:
+        return 0
+    else:
+        abort_num = (num % 10)
+        num //= 10
+        return abort_num + task3(num) / 10
+
+
+try:
+    print('Введите число:', end=" ")
+    NUMBER = int(input())
+    print(f'Перевернутое число: {task3(NUMBER)}')
+except ValueError:
+    print('Ошибка ввода числа')

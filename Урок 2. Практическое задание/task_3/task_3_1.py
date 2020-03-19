@@ -12,3 +12,15 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+try:
+    print('Введите число:', end=" ")
+    NUMBER = int(input())
+    NUMBER_ABORT = 0
+    while NUMBER:
+        NUMBER_ABORT += NUMBER % 10
+        NUMBER //= 10
+        if NUMBER:
+            NUMBER_ABORT *= 10
+    print(f'Перевернутое число: {NUMBER_ABORT}')
+except ValueError:
+    print('Ошибка ввода числа')

@@ -5,3 +5,14 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+try:
+    print('Введите натуральное число:')
+    NUM = int(input())
+    FACTORIAL = 0
+    print(f'n(n + 1) / 2 = {NUM*(NUM+1) / 2}')
+    while NUM:
+        FACTORIAL += NUM
+        NUM -= 1
+    print(f'1+2+...+n = {FACTORIAL}')
+except ValueError:
+    print('Ошибка ввода числа')

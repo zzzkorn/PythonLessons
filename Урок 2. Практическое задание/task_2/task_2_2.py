@@ -15,3 +15,27 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def task2(num):
+    count_div_2 = 0
+    count_not_div_2 = 0
+    if num > 0:
+        a = num % 10
+        if a % 2 == 0:
+            count_div_2 += 1
+        else:
+            count_not_div_2 += 1
+        cd2, cnd2 = task2(num // 10)
+        count_div_2, count_not_div_2 = count_div_2 + cd2, count_not_div_2 + cnd2
+        return count_div_2, count_not_div_2
+    else:
+        return 0, 0
+
+
+try:
+    print('Введите натуральное число:', end=" ")
+    NUMBER = int(input())
+    print(f'Количество четных и нечетных цифр в числе равно: {task2(NUMBER)}')
+except ValueError:
+    print('Ошибка ввода числа')

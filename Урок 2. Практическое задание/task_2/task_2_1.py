@@ -12,3 +12,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+try:
+    print('Введите натуральное число:', end=" ")
+    NUMBER = int(input())
+    print(f'В числе {NUMBER} всего', end=" ")
+    NUMBER_COUNT = 0
+    COUNT_DIV_2 = 0
+    COUNT_NOT_DIV_2 = 0
+    while NUMBER:
+        A = NUMBER % 10
+        if A % 2 == 0:
+            COUNT_DIV_2 += 1
+        else:
+            COUNT_NOT_DIV_2 += 1
+        NUMBER_COUNT += 1
+        NUMBER = NUMBER // 10
+    print(f'{NUMBER_COUNT} цифры, из которых {COUNT_DIV_2} чётных и {COUNT_NOT_DIV_2} нечетных')
+except ValueError:
+    print('Ошибка ввода числа')

@@ -5,3 +5,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def task7(number):
+    if number <= 0:
+        return 0
+    else:
+        return number + task7(number - 1)
+
+
+try:
+    print('Введите натуральное число:')
+    NUM = int(input())
+    print(f'n(n + 1) / 2 = {NUM * (NUM + 1) / 2}')
+    print(f'1+2+...+n = {task7(NUM)}')
+except ValueError:
+    print('Ошибка ввода числа')

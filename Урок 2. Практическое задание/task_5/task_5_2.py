@@ -17,3 +17,19 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def task5(code_element, last_code_element, count=1):
+    if code_element > last_code_element:
+        return 1
+    else:
+        if count % 10 != 0:
+            print(f'{code_element} - {chr(code_element)}', end=' ')
+        else:
+            print(f'{code_element} - {chr(code_element)}')
+        task5(code_element + 1, last_code_element, count + 1)
+
+
+CODE_ELEMENT = 32
+LAST_CODE_ELEMENT = 127
+task5(CODE_ELEMENT, LAST_CODE_ELEMENT)

@@ -17,3 +17,12 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+CODE_ELEMENT = 32
+CODE_LAST_ELEMENT = 127
+
+while CODE_ELEMENT <= CODE_LAST_ELEMENT:
+    COUNT = CODE_ELEMENT
+    while (CODE_ELEMENT - COUNT) < 10 and CODE_ELEMENT <= CODE_LAST_ELEMENT:
+        print(f'{CODE_ELEMENT} - {chr(CODE_ELEMENT)}', end=' ')
+        CODE_ELEMENT += 1
+    print('')

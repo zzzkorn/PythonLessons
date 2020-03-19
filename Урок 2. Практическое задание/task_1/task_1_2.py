@@ -33,3 +33,38 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+
+
+def task1():
+    print('Введите операцию (+, -, *, / или 0 для выхода):', end=' ')
+    cmd_type = input()
+    if cmd_type == '0':
+        return 1
+    else:
+        if cmd_type != '+' and cmd_type != '-' and cmd_type != '*' and cmd_type != '/' and cmd_type != '0':
+            print('Неверная операция. Повторите ввод')
+        else:
+            try:
+                print('Введите первое число:', end=' ')
+                first_num = int(input())
+                print('Введите второе число:', end=' ')
+                second_num = int(input())
+                print(
+                    f'Результат {first_num} {cmd_type} {second_num} =',
+                    end=' ')
+                if cmd_type == '+':
+                    print(first_num + second_num)
+                elif cmd_type == '-':
+                    print(first_num - second_num)
+                elif cmd_type == '*':
+                    print(first_num * second_num)
+                elif cmd_type == '/':
+                    print(first_num / second_num)
+            except ValueError:
+                print('Ошибка ввода числа')
+            except ZeroDivisionError:
+                print('Ошибка деления на 0')
+        task1()
+
+
+task1()

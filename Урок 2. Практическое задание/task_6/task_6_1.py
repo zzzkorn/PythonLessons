@@ -7,3 +7,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+from random import randint
+
+COUNT = 10
+PARAM = randint(0, 100)
+while COUNT:
+    try:
+        COUNT -= 1
+        print('Угадайте загаданое число:')
+        NUM = int(input())
+        if PARAM == NUM or COUNT == 0:
+            print(f'Загаданное число: {PARAM}')
+            break
+        elif PARAM < NUM:
+            print('Меньше', end=', ')
+        elif PARAM > NUM:
+            print('Больше', end=', ')
+        print(f'осталось попыток {COUNT}')
+    except ValueError:
+        print('Ошибка ввода числа')
