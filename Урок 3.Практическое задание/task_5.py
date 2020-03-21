@@ -8,3 +8,18 @@
 Базовый список: [-55, -69, -5, 72, -41, -58, -79, 58, 74, 1]
 Максимальный отрицательный элемент в данном массиве = -5, его индекс 2
 """
+import random
+from functools import reduce
+MASSIVE = [random.randint(-100, 100) for x in range(10)]
+print(f'Базовый список: {MASSIVE}')
+MAX_VALUE = reduce(
+    lambda x, y:
+    x if x > y else y,
+    list(
+        filter(
+            lambda x: x < 0,
+            MASSIVE)))
+print(
+    f'Максимальный отрицательный элемент в данном массиве = {MAX_VALUE}, '
+    f'его индекс {MASSIVE.index(MAX_VALUE)}')
+
